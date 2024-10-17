@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #SBATCH --job-name=mriqc-apptainer
 #SBATCH --error=slurm-%x-%J.err
 #SBATCH --output=slurm-%x-%J.out
