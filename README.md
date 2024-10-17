@@ -9,4 +9,4 @@ Intended to be executed on a SLURM cluster
 
 ## MRIQC
 
-`./code/mriqc-slurm.sh`
+`sbatch code/mriqc-slurm.sh`
