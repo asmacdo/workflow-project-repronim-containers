@@ -14,6 +14,8 @@ scontrol show job "$SLURM_JOBID" > derivatives/mriqc/logs/"$SLURM_JOBID"-info.ou
 export DUCT_OUTPUT_PREFIX="derivatives/mriqc/logs/duct_"
 export > derivatives/mriqc/logs/"$SLURM_JOBID"-exports.out
 
+datalad save -m "Saving job metadata prior to execution of job $SLURM_JOBID"
+
 # TODO is input data bind ro?
 # TODO assuming containers-run is binding ., workdir is relative
 # TODO do we need: stdbuf -i0 -o0 -e0 \
