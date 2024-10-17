@@ -3,7 +3,7 @@
 #SBATCH --error=derivatives/mriqc/logs/slurm-%x-%J.err
 #SBATCH --output=derivatives/mriqc/logs/slurm-%x-%J.out
 #SBATCH --requeue
-#SBATCH --time=01:00:00
+#SBATCH --time=02:00:00
 #SBATCH --mem=50G
 ##SBATCH --account=free
 ##SBATCH --partition=standard
