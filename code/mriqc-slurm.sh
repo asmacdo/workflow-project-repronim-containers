@@ -14,8 +14,8 @@ cd $(dirname "$0")/..
 conda activate datalad
 
 scontrol show job "$SLURM_JOBID" > "$SLURM_JOBID"-info.out
-+export DUCT_OUTPUT_PREFIX="derivatives/mriqc/duct_"
-export > derivatives/mriqc/"$SLURM_JOBID"-exports.out
++export DUCT_OUTPUT_PREFIX="derivatives/mriqc/logs/duct_"
+export > derivatives/mriqc/logs/"$SLURM_JOBID"-exports.out
 
 # TODO is input data bind ro?
 # TODO assuming containers-run is binding ., workdir is relative
