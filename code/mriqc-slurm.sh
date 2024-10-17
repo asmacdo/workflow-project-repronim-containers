@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH --job-name=mriqc-apptainer
-#SBATCH --error=slurm-%x-%J.err
-#SBATCH --output=slurm-%x-%J.out
+#SBATCH --error=derivatives/mriqc/logs/slurm-%x-%J.err
+#SBATCH --output=derivatives/mriqc/logs/slurm-%x-%J.out
 #SBATCH --requeue
 #SBATCH --time=01:00:00
 #SBATCH --mem=50G
