@@ -8,6 +8,9 @@
 ##SBATCH --account=free
 ##SBATCH --partition=standard
 
+# Always execute from the root of the repo
+cd $(dirname "$0")/..
+
 conda activate datalad
 
 scontrol show job "$SLURM_JOBID" > "$SLURM_JOBID"-info.out
