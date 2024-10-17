@@ -2,3 +2,8 @@
 	path = sourcedata/ds004215
 	url = https://datasets.datalad.org/openneuro/ds004215/.git
 	datalad-id = 0b255ee0-784b-4770-b66a-96dff03353d1
+[submodule "code/containers"]
+	path = code/containers
+	url = https://datasets.datalad.org/repronim/containers/.git
+	datalad-id = b02e63c2-62c1-11e9-82b0-52540040489c
+	datalad-url = ///repronim/containers
