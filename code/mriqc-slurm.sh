@@ -14,7 +14,7 @@ cd $(dirname "$0")/..
 conda activate datalad
 
 scontrol show job "$SLURM_JOBID" > "$SLURM_JOBID"-info.out
-export DUCT_OUTPUT_PREFIX = derivatives/mriqc/duct_
++export DUCT_OUTPUT_PREFIX="derivatives/mriqc/duct_"
 export > "$SLURM_JOBID"/export.out
 
 # TODO is input data bind ro?
