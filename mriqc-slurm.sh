@@ -13,10 +13,13 @@ conda activate datalad
 scontrol show job "$SLURM_JOBID" > "$SLURM_JOBID"-info.out
 export > "$SLURM_JOBID"/export.out
 
-stdbuf -i0 -o0 -e0 \
-	apptainer run --contain \
-        --bind "$PWD"/sourcedata/ds004215:/data:ro \
-        --bind "$PWD"/derivatives/mriqc/:/out \
-        --bind "$PWD"/scratch/mriqc/:/workdir \
-	docker://nipreps/mriqc:24.0.2 /data /out \
-		participant -w /workdir --no-sub
+# TODO is input data bind ro?
+# TODO assuming containers-run is binding ., workdir is relative
+# TODO do we need: stdbuf -i0 -o0 -e0 \
+
+# --no-sub prevents MRIQC default attempt to upload anonymized quality metrics
+datalad containers-run \
+	-n bids-mriqc \
+	--input sourcedata/ds004215 \
+	--output derivatives/mriqc \
+	'{inputs}' '{outputs}' participant group -w scratch/mriqc --no-sub
